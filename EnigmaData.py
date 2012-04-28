@@ -23,6 +23,14 @@ class EnigmaData(object):
         self.handle = handle
         self.dreamboxip = self.__settings__.getSetting("dreamboxhost")
         self.dreamboxport = self.__settings__.getSetting("dreamboxport")
+        
+        dreamboxuser = self.__settings__.getSetting("dreamboxuser")
+        dreamboxpasswd = self.__settings__.getSetting("dreamboxpasswd")
+        password_mgr = urllib2.HTTPPasswordMgrWithDefaultRealm()
+        password_mgr.add_password(None, "http://" + self.dreamboxip + ":" + self.dreamboxport, dreamboxuser, dreamboxpasswd)
+        handler = urllib2.HTTPBasicAuthHandler(password_mgr)
+        opener = urllib2.build_opener(handler)
+        urllib2.install_opener(opener)
         self.debug = self.__settings__.getSetting("debug")
       
     def basicmenu(self):
@@ -39,7 +47,9 @@ class EnigmaData(object):
     
     def getBougetListTV(self):
         # Get Bouquet list
-        data = urllib2.urlopen("http://" + self.dreamboxip + ":" + self.dreamboxport + "/web/getservices?" + urllib.urlencode({"sRef": '1:7:1:0:0:0:0:0:0:0:(type == 1) || (type == 17) || (type == 195) || (type == 25)FROM BOUQUET "bouquets.tv" ORDER BY bouquet'}))
+        myurl = "http://" + self.dreamboxip + ":" + self.dreamboxport + "/web/getservices?" + urllib.urlencode({"sRef": '1:7:1:0:0:0:0:0:0:0:(type == 1) || (type == 17) || (type == 195) || (type == 25)FROM BOUQUET "bouquets.tv" ORDER BY bouquet'})
+        print myurl
+        data = urllib2.urlopen(myurl)
         e2servicelist = xml.dom.minidom.parse(data)
         data.close()
 
@@ -139,7 +149,10 @@ class EnigmaData(object):
                 data[element.localName] = getText(element.childNodes)
             servicereference = data["e2eventservicereference"].split(":")
             attr = int(servicereference[1])
-            mode = int(servicereference[2])
+            try:
+                mode = int(servicereference[2])
+            except:
+                pass
             cmd = {}
             eventname=""
             eventbeschreibung=""

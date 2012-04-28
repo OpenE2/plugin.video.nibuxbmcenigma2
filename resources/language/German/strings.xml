@@ -10,5 +10,7 @@
 <!-- Settings -->
 <string id="30200">Dreambox IP</string>
 <string id="30201">Dreambox Port</string>
-<string id="30202">Debugging (restart script to apply)</string>
+<string id="30202">Dreambox User</string>
+<string id="30203">Dreambox Passwort</string>
+<string id="30204">Debugging (restart script to apply)</string>
 </strings>
