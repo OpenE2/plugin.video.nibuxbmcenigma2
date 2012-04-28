@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+	<category label=”General”>
+		<setting id="dreamboxhost" type="text" label="30200" default="192.168.0.22" />
+		<setting id="dreamboxport" type="text" label="30201" default="80" />
+    	<setting type="sep" />
+    	<setting id="debug" type="bool" label="30202" default="false" />
+   </category>
+</settings>

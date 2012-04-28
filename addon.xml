@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon
+id="plugin.video.nibuxbmcenigma2"
+version="0.0.1"
+name="NiBuDev Enigma2 Viewer"
+provider-name="Nicolai Burger"
+>
+<requires>
+		<import addon="xbmc.python" version="1.0"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="default.py">
+<provides>video</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+<summary>XBMC Integration for Emigam2</summary>
+<summary lang="de">XBMC Integration für Enigma2</summary>
+<description>provides to List an Watch LiveStreams from your Dreambox</description>
+<description lang="de">Ansicht der verfügbaren Channels und Stream eines ausgewählten Channels direkt von der Dreambox</description>
+<platform>all</platform>
+</extension>
+</addon>

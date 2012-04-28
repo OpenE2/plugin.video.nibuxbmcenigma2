@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+<!-- Addon Name -->
+<string id="30000">NiBuDev Enigma2 Viewer</string>
+<!-- some other strings -->
+<string id="30101">TV</string>
+<string id="30102">Radio</string>
+<string id="30103">Filme</string>
+<string id="30104">kein Daten verfügbar</string>
+<!-- Settings -->
+<string id="30200">Dreambox IP</string>
+<string id="30201">Dreambox Port</string>
+<string id="30202">Debugging (restart script to apply)</string>
+</strings>
